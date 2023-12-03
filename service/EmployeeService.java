@@ -3,7 +3,7 @@ package pro.sky.Streams.service;
 import pro.sky.Streams.model.Employee;
 
 import java.util.Collection;
-import java.util.Map;
+import java.util.List;
 
 public interface EmployeeService {
 
@@ -22,4 +22,10 @@ public interface EmployeeService {
     Collection<Employee> maxSalary();
 
     Collection<Employee> minSalary();
+
+    List<Employee> list();
+
+    void remove(String firstName, String lastName);
+
+    Employee find(String firstName, String lastName);
 }

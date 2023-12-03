@@ -9,7 +9,7 @@ import java.util.*;
 
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService {
+public abstract class EmployeeServiceImpl implements EmployeeService {
 
     private Map<String, Employee> employees;
 

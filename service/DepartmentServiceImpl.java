@@ -13,7 +13,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     private final EmployeeServiceImpl employeeServiceImpl;
 
 
-    public DepartmentServiceImpl(EmployeeServiceImpl employeeServiceImpl) {
+    public DepartmentServiceImpl(EmployeeService employeeServiceImpl) {
         this.employeeServiceImpl = employeeServiceImpl;
     }
 

@@ -16,4 +16,6 @@ public interface DepartmentService {
     Employee getMaxSalary(int department);
 
     Employee getMinSalary(int department);
+
+    List<Employee> getEmployees(int i);
 }
