@@ -1,4 +1,4 @@
-package service;
+package pro.sky.Streams.test.test.test.service;
 
 import io.micrometer.observation.Observation;
 import org.junit.jupiter.api.Assertions;
@@ -29,22 +29,7 @@ class EmployeeServiceTest {
 
     @BeforeEach
     void setUp() {
-        out = new EmployeeServiceImpl() {
-            @Override
-            public List<Employee> list() {
-                return null;
-            }
-
-            @Override
-            public void remove(String firstName, String lastName) {
-
-            }
-
-            @Override
-            public Employee find(String firstName, String lastName) {
-                return null;
-            }
-        };
+        out = new EmployeeServiceImpl();
     }
 
     @Test

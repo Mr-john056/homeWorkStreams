@@ -7,11 +7,10 @@ import pro.sky.Streams.model.Employee;
 
 import java.util.*;
 
-
 @Service
-public abstract class EmployeeServiceImpl implements EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
 
-    private Map<String, Employee> employees;
+    private final Map<String, Employee> employees;
 
     public EmployeeServiceImpl() {
         this.employees = new HashMap<>();
@@ -19,7 +18,7 @@ public abstract class EmployeeServiceImpl implements EmployeeService {
 
     private List<Employee> employeeList;
 
-    public List<Employee> getEmployeeList(){
+    public List<Employee> getEmployeeList() {
         return employeeList;
     }
 
@@ -31,7 +30,8 @@ public abstract class EmployeeServiceImpl implements EmployeeService {
         this.employees = employees;
     }
 
-    public EmployeeServiceImpl(List<Employee> employeeList) {
+    public EmployeeServiceImpl(Map<String, Employee> employees, List<Employee> employeeList) {
+        this.employees = employees;
         this.employeeList = employeeList;
     }
 
@@ -86,6 +86,21 @@ public abstract class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Collection<Employee> minSalary() {
+        return null;
+    }
+
+    @Override
+    public List<Employee> list() {
+        return null;
+    }
+
+    @Override
+    public void remove(String firstName, String lastName) {
+
+    }
+
+    @Override
+    public Employee find(String firstName, String lastName) {
         return null;
     }
 }

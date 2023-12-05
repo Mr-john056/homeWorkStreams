@@ -10,8 +10,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
-    private final EmployeeServiceImpl employeeServiceImpl;
-
+    public final EmployeeServiceImpl employeeServiceImpl;
 
     public DepartmentServiceImpl(EmployeeService employeeServiceImpl) {
         this.employeeServiceImpl = employeeServiceImpl;
@@ -45,6 +44,11 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .filter(employee -> employee.getDepartment() == dep)
                 .min(Comparator.comparing(Employee::getSalary))
                 .orElseThrow(pro.sky.Streams.exception.EmployeeNotFoundException::new);
+    }
+
+    @Override
+    public List<Employee> getEmployees(int i) {
+        return null;
     }
 
     @Override

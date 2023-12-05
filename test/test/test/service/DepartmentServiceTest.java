@@ -1,4 +1,4 @@
-package service;
+package pro.sky.Streams.test.test.test.service;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,29 +17,29 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class DepartmentServiceTest {
-private static final List<Employee> LIST = List.of(
-        new Employee("Иванова", "Мария", 1000,1),
-        new Employee("Петрова", "Татьяна", 1100,2),
-        new Employee("Морозов", "Павел", 1200,2);
-@Mock
+class DepartmentServiceTest {
+    private static final List<Employee> LIST = List.of(
+            new Employee("Иванова", "Мария", 1000, 1),
+            new Employee("Петрова", "Татьяна", 1100, 2),
+            new Employee("Морозов", "Павел", 1200, 2));
+    @Mock
     private EmployeeService serviceMock;
 
-private DepartmentService out;
+    private DepartmentService out;
 
-@BeforeEach
-    void setUp(){
-    when(serviceMock.list()).thenReturn(LIST);
-    out = new DepartmentServiceImpl(serviceMock);
-}
+    @BeforeEach
+    void setUp() {
+        when(serviceMock.list()).thenReturn(LIST);
+        out = new DepartmentServiceImpl(serviceMock);
+    }
 
     @Test
     void getEmployees() {
         when(serviceMock.list()).thenReturn(LIST);
 
         List<Employee> expected = List.of(
-                new Employee("Иванова", "Мария", 1000,1),
-                new Employee("Петрова", "Татьяна", 1100,2));
+                new Employee("Иванова", "Мария", 1000, 1),
+                new Employee("Петрова", "Татьяна", 1100, 2));
         List<Employee> result = out.getEmployees(1);
         Assertions.assertEquals(expected.size(), result.size());
         Assertions.assertEquals(expected.get(0), result.get(0));
