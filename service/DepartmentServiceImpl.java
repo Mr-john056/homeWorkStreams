@@ -13,7 +13,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public final EmployeeServiceImpl employeeServiceImpl;
 
     public DepartmentServiceImpl(EmployeeService employeeServiceImpl) {
-        this.employeeServiceImpl = employeeServiceImpl;
+        this.employeeServiceImpl = (EmployeeServiceImpl) employeeServiceImpl;
     }
 
     public List<Employee> getAllByDepartment(int dep) {
