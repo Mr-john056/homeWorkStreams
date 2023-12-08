@@ -1,5 +1,6 @@
 package pro.sky.Streams.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pro.sky.Streams.model.Employee;
 import pro.sky.Streams.service.DepartmentService;
+import pro.sky.Streams.service.DepartmentServiceImpl;
 import pro.sky.Streams.service.EmployeeService;
 
 import java.util.List;
-
 
 @RestController
 @RequestMapping("/dep")
@@ -30,12 +31,12 @@ public class DepartmentController {
     }
 
     @GetMapping("/max-salary")
-    public Employee maxSalary(@RequestParam int department) {
-        return EmployeeService.maxSalary(department);
+    public Employee getMaxSalary(@RequestParam int department) {
+        return service.getMaxSalary(department);
     }
 
     @GetMapping("/min-salary")
-    public Employee minSalary(@RequestParam int department) {
-        return EmployeeService.minSalary(department);
+    public Employee getMinSalary(@RequestParam int department) {
+        return service.getMinSalary(department);
     }
 }

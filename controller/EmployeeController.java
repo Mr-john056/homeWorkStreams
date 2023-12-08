@@ -53,6 +53,4 @@ public class EmployeeController {
                                                 @RequestParam int department) {
         return service.findAll();
     }
-
-
 }

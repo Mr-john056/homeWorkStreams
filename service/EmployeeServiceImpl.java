@@ -1,20 +1,48 @@
 package pro.sky.Streams.service;
 
 import org.springframework.stereotype.Service;
-import pro.sky.Streams.exceprion.EmployeeAlreadyAddedException;
-import pro.sky.Streams.exceprion.EmployeeNotFoundException;
+import pro.sky.Streams.exception.EmployeeAlreadyAddedException;
+import pro.sky.Streams.exception.EmployeeNotFoundException;
 import pro.sky.Streams.model.Employee;
 
 import java.util.*;
 
-
 @Service
-public abstract class EmployeeServiceImpl implements pro.sky.Streams.service.EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
 
     private final Map<String, Employee> employees;
 
     public EmployeeServiceImpl() {
         this.employees = new HashMap<>();
+    }
+
+    private List<Employee> employeeList;
+
+    public List<Employee> getEmployeeList() {
+        return employeeList;
+    }
+
+    public Map<String, Employee> getEmployees() {
+        return employees;
+    }
+
+    public EmployeeServiceImpl(Map<String, Employee> employees) {
+        this.employees = employees;
+    }
+
+    public EmployeeServiceImpl(Map<String, Employee> employees, List<Employee> employeeList) {
+        this.employees = employees;
+        this.employeeList = employeeList;
+    }
+
+    @Override
+    public Employee maxSalary(String firstName, String lastName, int salary, int department) {
+        return null;
+    }
+
+    @Override
+    public Employee minSalary(String firstName, String lastName, int salary, int department) {
+        return null;
     }
 
     @Override
@@ -49,5 +77,30 @@ public abstract class EmployeeServiceImpl implements pro.sky.Streams.service.Emp
     @Override
     public Collection<Employee> findAll() {
         return Collections.unmodifiableCollection(employees.values());
+    }
+
+    @Override
+    public Collection<Employee> maxSalary() {
+        return null;
+    }
+
+    @Override
+    public Collection<Employee> minSalary() {
+        return null;
+    }
+
+    @Override
+    public List<Employee> list() {
+        return null;
+    }
+
+    @Override
+    public void remove(String firstName, String lastName) {
+
+    }
+
+    @Override
+    public Employee find(String firstName, String lastName) {
+        return null;
     }
 }

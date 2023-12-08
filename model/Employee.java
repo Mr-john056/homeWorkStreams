@@ -5,11 +5,11 @@ import java.util.Objects;
 public class Employee {
     private final String firstName;
     private final String lastName;
-    private int salary;
-    private double department;
+    private final int salary;
+    private int department;
 
 
-    public Employee(String firstName, String lastName, int salary, double department) {
+    public Employee(String firstName, String lastName, int salary, int department) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
@@ -22,6 +22,14 @@ public class Employee {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public  int getSalary(){
+        return salary;
+    }
+
+    public int getDepartment(){
+        return department;
     }
 
     public String getFullName(){
@@ -49,11 +57,8 @@ public class Employee {
                 '}';
     }
 
-    public int getDepartment() {
-        return (int) department;
-    }
-
     public void setDepartment(int department) {
         this.department = department;
     }
+
 }
